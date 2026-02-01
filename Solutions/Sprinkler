@@ -61,4 +61,8 @@ signed main(){
 }
 /*
 http://ybt.ssoier.cn:8088/problem_show.php?pid=1424
+
+这题p[0]和p[n+1]缺一不可
+这两个小巧思一个是处理零点的枢纽另一个则是退出循环的关键
+
 */
