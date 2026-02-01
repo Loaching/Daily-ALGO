@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+#include<vector>
+#define int long long
+using namespace std;
+int n,l,w;
+bool flag=true;
+struct nde{
+	double st,ed;
+};
+nde p[15005];
+bool cmp(nde a,nde b){
+	return a.ed<=b.ed;
+}
+void init(){
+	flag=true;
+	memset(p,0,sizeof(p));
+	cin>>n>>l>>w;
+	for(int i=1,x,y;i<=n;i++){
+		cin>>x>>y;
+		if(y<=w/2.0)
+			p[i].st=x,p[i].ed=x;
+		else
+			p[i].st=x-sqrt(y*y-w*w/4.0),p[i].ed=x+sqrt(y*y-w*w/4.0);
+		
+	}
+}
+void sol(){ 
+	int ans=0;
+	sort(p+1,p+1+n,cmp);
+	if(p[n].ed<l){
+		flag=false;
+		return;
+	}
+	p[0].ed=p[0].st=0;
+	p[n+1].st=p[n+1].ed=l;
+	for(int i=0;i<=n;){
+		flag=false;
+		if(i) ans++;
+		for(int j=n+1;j>i;j--){
+			if(p[j].st<=p[i].ed){
+				i=j;
+				flag=true;
+				break;
+			}
+		}
+		if(!flag)	return;
+	}
+	cout<<ans<<'\n';
+}
+signed main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	int T; 
+	cin>>T;
+	while(T--){
+		init();
+		if(flag)	sol();
+		if(!flag)	cout<<"-1\n";
+	}
+	return 0;
+}
+/*
+http://ybt.ssoier.cn:8088/problem_show.php?pid=1424
+*/
