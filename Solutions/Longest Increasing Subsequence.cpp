@@ -17,6 +17,7 @@ signed main() {
 	return 0;
 }
 /*
+https://www.luogu.com.cn/problem/B3637
 什...什么?!直到今天才知道这玩意有$O(n log n)$算法
 搞得我很蠢
 */
