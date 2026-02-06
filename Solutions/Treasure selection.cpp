@@ -15,7 +15,7 @@ void init() {
 			v.push_back(vi * k);
 			t.push_back(wi * k);
 			mi -= k;
-		}
+		}					//HEY,看这里，二进制拆分，小子！
 		if (mi) {
 			v.push_back(vi * mi);
 			t.push_back(wi * mi);
@@ -41,7 +41,9 @@ signed main() {
 	return 0;
 }
 /*
+
 https://www.luogu.com.cn/problem/P1776
+
 还是AI哥教的好
 我怎么就没想到可以用二进制拆分合并物品呢
 */
