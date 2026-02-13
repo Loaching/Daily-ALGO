@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
 #define int long long
 using namespace std;
-int n,m;
+int n,m,minn=LONG_LONG_MAX;
+const int inf = 89474865565;
 vector<pair<int,int>> G[10050];
-int dis[10050],cnt[10050],vis[10500];
 
 void init(){
     cin>>n>>m;
@@ -13,12 +13,12 @@ void init(){
     }
 }
 
-void spfa(int st){
+void spfa(int st,int ed){
+    vector<int>dis(10050,inf),cnt(10050,0),vis(10500,0);
     queue<int>q;
-    memset(dis,0x3f,sizeof(dis));
     dis[st]=0;
     vis[st]=1;
-    cnt[st]++;
+    cnt[st]=0;
     q.push(st);
     while(q.size()){
         int x=q.front();
@@ -28,27 +28,34 @@ void spfa(int st){
             int y=k.first,z=k.second;
             if(dis[y]>dis[x]+z){
                 dis[y]=dis[x]+z;
+                cnt[y]=cnt[x]+1;
+                if(cnt[y]>=n){
+                    cout<<"Forever love";
+                    exit(0);
+                }
                 if(!vis[y]){
                     vis[y]=1;
                     q.push(y);
-                    cnt[y]++;
-                    if(cnt[y]>n){
-                        cout<<"Forever love";
-                        return;
-                    }
                 }
             }
        }
     }
-    cout<<dis[n];
+    minn=min(minn,dis[ed]);
+}
+
+void sol(){
+    spfa(1,n);
+    spfa(n,1);
+    cout<<minn;
 }
 
 signed main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
     init();
-    spfa(1);
+    sol();
     return 0;
 }
 
-/*半成品，90分，明天改https://www.luogu.com.cn/problem/P2136*/
+
+/*https://www.luogu.com.cn/problem/P2136*/
