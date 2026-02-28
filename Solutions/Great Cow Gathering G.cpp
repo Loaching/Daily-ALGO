@@ -66,5 +66,8 @@ signed main() {
 	return 0;
 }
 /*
+另外一种做法是按照点权（忽视边权）使用DFS先找到重心接着用该重心结合边权算结果
+我这个做法是先假设所有牛都去1点再挪动找答案
+如图：https://cdn.luogu.com.cn/upload/image_hosting/ejqf9k20.png?x-oss-process=image/resize,m_lfit,h_170,w_225
 https://www.luogu.com.cn/problem/P2986
 */
