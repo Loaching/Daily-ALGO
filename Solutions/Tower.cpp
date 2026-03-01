@@ -44,6 +44,7 @@ signed main(){
 //我刚学的滚动优化我能惯着你？
 /*
 https://www.luogu.com.cn/problem/P1651
-
+i&1 奇数返回1偶数返回0
+now^1 若现在为1则用到上一次的(1^1=0),反之亦然
 滚动优化get!
 */
