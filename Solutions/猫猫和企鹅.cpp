@@ -17,8 +17,6 @@ void init() {
 
 void dfs(int u,int fa) {
 	dep[u]=dep[fa]+1;
-//	if(dep[u]>d)	return;
-//	ans++;
 	for(auto k : G[u]){
 		if(k==fa)	continue;
 		dfs(k,u);
@@ -27,13 +25,10 @@ void dfs(int u,int fa) {
 
 void sol(){
 	dfs(1,0);
-//	cout<<ans;
 	for(int i=2;i<=n;i++){
 		if(dep[i]<=d){
 			ans++;
 		}
-//		cout<<"nin "<<dep[i]<<'\n';
-//		cout<<d;
 	}
 	cout<<ans;
 }
