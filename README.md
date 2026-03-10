@@ -18,4 +18,4 @@ Diligent in learning, steadfast in progress.
 >   栈如山顷难停.
 >   了却算法天下事,
 >   却得 RE 全暴零.
->   long long 笑出声.
+>   long long 笑出声
