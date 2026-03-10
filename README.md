@@ -12,7 +12,7 @@ Diligent in learning, steadfast in progress.
 >   梦回信竞联营.
 >   8KB内存超限,
 >   5毫秒超时爆零.
->   可怜发不生.
+>   可怜发不生
 
 >   边界溢出飞快,
 >   栈如山顷难停.
