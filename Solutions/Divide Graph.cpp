@@ -58,4 +58,8 @@ signed main(){
 }
 /*
 https://atcoder.jp/contests/abc447/tasks/abc447_e
+算删边太难了
+遂可以正难则反
+从大到小加边
+若可merge(即get(x)!=get(y))则连通块数量-1
 */
