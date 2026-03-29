@@ -65,6 +65,8 @@ signed main() {
 	return 0;
 }
 /*
+https://www.luogu.com.cn/problem/CF547B
+https://codeforces.com/problemset/problem/547/B
 我脑子真不好用了
 心好疼
 */
